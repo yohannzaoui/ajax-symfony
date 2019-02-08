@@ -26,16 +26,26 @@ class PostLike
      */
     private $user;
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return Post|null
+     */
     public function getPost(): ?Post
     {
         return $this->post;
     }
 
+    /**
+     * @param Post|null $post
+     * @return PostLike
+     */
     public function setPost(?Post $post): self
     {
         $this->post = $post;
@@ -43,11 +53,18 @@ class PostLike
         return $this;
     }
 
+    /**
+     * @return User|null
+     */
     public function getUser(): ?User
     {
         return $this->user;
     }
 
+    /**
+     * @param User|null $user
+     * @return PostLike
+     */
     public function setUser(?User $user): self
     {
         $this->user = $user;
