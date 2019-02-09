@@ -13,7 +13,7 @@ class SecurityController extends AbstractController
 {
 
     /**
-     * @Route("/login", name="login")
+     * @Route(path="/login", name="login", methods={"GET", "POST"})
      */
     public function login()
     {
@@ -21,7 +21,7 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/logout", name="logout")
+     * @Route(path="/logout", name="logout", methods={"GET"})
      */
     public function logout()
     {

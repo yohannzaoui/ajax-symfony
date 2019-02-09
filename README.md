@@ -1,6 +1,6 @@
-# Bouton LIKE avec Ajax (code complet)
+# Bouton LIKE avec Ajax (code complet et amélioré)
 
-## Depuis le cours de Lior Chamla https://www.youtube.com/watch?v=lygMPwUj9yU
+## Depuis le cours de [Lior Chamla](https://github.com/liorchamla) à voir sur [YouTube](https://www.youtube.com/watch?v=lygMPwUj9yU)
 
 # Installation
 ```

@@ -31,7 +31,7 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route(path="/post/{id}/like", name="post_like")
+     * @Route(path="/post/{id}/like", name="post_like", methods={"GET"})
      * @param Post $post
      * @param ObjectManager $manager
      * @param PostLikeRepository $repository
