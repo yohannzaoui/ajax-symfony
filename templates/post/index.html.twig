@@ -16,7 +16,7 @@
                     <div class="border border-dark rounded p-2">
                         <h3>{{post.title}}</h3>
                         <p>{{post.introduction}}</p>
-                        <a href="#" class="btn btn-primary">Lire la suite</a>
+                        <a href="{{ path('post', {'id':post.id}) }}" class="btn btn-primary">Lire la suite</a>
 
                         <a href="{{ path('post_like', {'id':post.id})}}" class="btn btn-link js-like">
                             {% if app.user and post.isLikeByUser(app.user) %}

@@ -21,12 +21,29 @@ class PostController extends AbstractController
      * @param PostRepository $repo
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(PostRepository $repo)
+    public function allPosts(PostRepository $repo)
     {
         $posts = $repo->findAll();
 
         return $this->render('post/index.html.twig', [
             'posts' => $posts
+        ]);
+    }
+
+    /**
+     * @Route(path="/post/{id}", name="post", methods={"GET"})
+     * @param $id
+     * @param PostRepository $repo
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function post($id, PostRepository $repo)
+    {
+        $post = $repo->findBy([
+            'id' => $id
+        ]);
+
+        return $this->render('post/post.html.twig', [
+            'post' => $post
         ]);
     }
 
