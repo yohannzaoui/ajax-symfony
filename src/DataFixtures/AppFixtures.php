@@ -43,7 +43,8 @@ class AppFixtures extends Fixture
 
         $user = new User();
         $user->setEmail('user@symfony.com')
-            ->setPassword($this->encoder->encodePassword($user, 'password'));
+            ->setPassword($this->encoder->encodePassword($user, 'password'))
+            ->setUsername('admin');
 
         $manager->persist($user);
 
@@ -51,8 +52,9 @@ class AppFixtures extends Fixture
 
         for ($i=0; $i < 20; $i++) {
             $user = new User();
-            $user->setEmail($faker->email)
-                ->setPassword($this->encoder->encodePassword($user, 'password'));
+            $user->setEmail($faker->email);
+            $user->setUsername($faker->name);
+            $user->setPassword($this->encoder->encodePassword($user, 'password'));
 
             $manager->persist($user);
 

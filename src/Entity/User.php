@@ -20,6 +20,12 @@ class User implements UserInterface
     private $id;
 
     /**
+     * @var
+     * @ORM\Column(type="string", length=180)
+     */
+    private $username;
+
+    /**
      * @ORM\Column(type="string", length=180, unique=true)
      */
     private $email;
@@ -40,6 +46,9 @@ class User implements UserInterface
      */
     private $likes;
 
+    /**
+     * User constructor.
+     */
     public function __construct()
     {
         $this->likes = new ArrayCollection();
@@ -149,6 +158,10 @@ class User implements UserInterface
         return $this->likes;
     }
 
+    /**
+     * @param PostLike $like
+     * @return User
+     */
     public function addLike(PostLike $like): self
     {
         if (!$this->likes->contains($like)) {
@@ -159,6 +172,10 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * @param PostLike $like
+     * @return User
+     */
     public function removeLike(PostLike $like): self
     {
         if ($this->likes->contains($like)) {
@@ -170,5 +187,10 @@ class User implements UserInterface
         }
 
         return $this;
+    }
+
+    public function setUsername($username)
+    {
+        $this->username = $username;
     }
 }

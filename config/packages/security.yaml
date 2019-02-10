@@ -9,7 +9,7 @@ security:
     app_user_provider:
       entity:
         class: App\Entity\User
-        property: email
+        property: username
   firewalls:
     dev:
       pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -23,6 +23,9 @@ security:
       logout:
         path: logout
         target: homepage
+      guard:
+          authenticators:
+              - App\Security\LoginFormAuthenticator
 
       # activate different ways to authenticate
       # http_basic: true
